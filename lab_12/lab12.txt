@@ -1,0 +1,35 @@
+Перегрузка операторов - новые значения для пользовательских типов
+Оператор как метод класса - оператор внутри класса
+
+Encyclopedia& operator+(Personality* p) - оператор +
+addPersonality(p) - вызов метода добавления
+return *this - для цепочек
+
+Использование оператора +:
+enc = enc + w1 - добавление объекта
+enc = enc + w2 + w3 - цепочка добавлений
+
+Оператор инкремента - две формы
+Encyclopedia& operator++() - префиксный
+addPersonality(new Writer()) - добавление объекта по умолчанию
+Encyclopedia operator++(int) - постфиксный
+Encyclopedia temp = *this - сохранение состояния
+++(*this) - вызов префиксной версии
+return temp - возврат старого состояния
+
+Оператор индексации:
+Personality* operator[](int index)
+if (index >= 0 && index < count) - проверка границ
+return personalities[index] - возврат элемента
+return nullptr - при ошибке
+
+ostream — это класс для работы с выходными потоками данных
+ostream& operator<<(ostream& os, const Encyclopedia& enc) {...}
+
+Демонстрация:
+cout << enc - вывод через оператор
+++enc - префиксный инкремент
+enc++ - постфиксный инкремент
+Personality* p = enc[2] - доступ по индексу
+
+

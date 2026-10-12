@@ -1,0 +1,22 @@
+Класс - тип данных, определяющий структуру и поведение объектов
+Personality - класс для хранения данных одной личности
+Encyclopedia - класс для управления коллекцией личностей
+Объект - конкретный экземпляр класса
+
+Инкапсуляция - объединение данных и методов, а также сокрытие реализации
+private: string name - поле закрыто от прямого доступа
+public: void setName(const string& n) { name = n; } - доступ к данным через методы
+
+Перегрузка метода - несколько методов с одним именем, разными параметрами
+void setData(const string& t) { title = t; } - устанавливает только название
+void setData(const string& t, int y) { title = t; publishYear = y; } - название и год
+
+Динамический массив - массив, который выделяется во время выполнения и его размер можно менять
+Personality* temp = new Personality[count + 1] - создание нового массива
+for (int i = 0; i < count; i++) temp[i] = personalities[i] - копирование элементов
+temp[count] = p - добавление нового элемента
+delete[] personalities; personalities = temp - замена массива
+
+Массив объектов - основной элемент программы
+Personality* personalities - массив объектов в классе Encyclopedia
+enc.addPersonality(p1) - добавление объекта в массив

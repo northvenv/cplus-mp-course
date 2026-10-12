@@ -1,0 +1,42 @@
+Конструктор - метод, вызываемый при создании объекта (название совпадает с именем класса)
+Деструктор - метод, вызываемый при удалении объекта (~ClassName, освобождает память)
+
+Конструктор по умолчанию - без параметров
+Encyclopedia() : title(""), publishYear(0), count(0) {
+    personalities = new Personality[1];
+    cout << "Encyclopedia: конструктор без параметров" << endl;
+}
+
+Конструктор с параметрами - принимает начальные значения  
+Encyclopedia(const string& t, int y) : title(t), publishYear(y), count(0) {
+    personalities = new Personality[1];
+    cout << "Encyclopedia: конструктор с параметрами" << endl;
+}
+
+Конструктор копирования - создает копию существующего объекта
+Encyclopedia(const Encyclopedia& other) : title(other.title), publishYear(other.publishYear), count(other.count) {
+    personalities = new Personality[count + 1];
+    for (int i = 0; i < count; i++) {
+        personalities[i] = other.personalities[i];
+    }
+    cout << "Encyclopedia: конструктор копирования" << endl;
+}
+
+Personality() : name(""), year(0), description("") - конструктор по умолчанию
+Personality(const string& n, int y) : name(n), year(y), description("") - с параметрами  
+Personality(const Personality& other) : name(other.name), year(other.year), description(other.description) - копирования
+
+cout << "Personality: конструктор копирования" - при создании копии
+
+Методы Encyclopedia:
+addPersonalityWithParams() - создает объект внутри себя
+Personality p(n, y, d); addPersonality(p);
+
+addCopies() - создает копии объекта  
+for (int i = 0; i < num; i++) {
+    Personality copy(p); addPersonality(copy);
+}
+
+Конструктор копирования Encyclopedia создает глубокую копию:
+Создает новый массив: personalities = new Personality[count + 1]
+Копирует все элементы: for (int i = 0; i < count; i++) personalities[i] = other.personalities[i]
