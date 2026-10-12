@@ -37,6 +37,9 @@
 *.exe
 *.out
 *.app
+/lab_[0-9]/lab[0-9]
+/lab_[0-9][0-9]/lab[0-9][0-9]
+/lab_13/lab_13
 
 # Build directories
 build/
